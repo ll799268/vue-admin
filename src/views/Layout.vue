@@ -12,11 +12,6 @@
 import Aside from '@components/Aside'
 import Main from '@components/Main'
 export default {
-  data () {
-    return {
-
-    }
-  },
   components: {
     Aside,
     Main

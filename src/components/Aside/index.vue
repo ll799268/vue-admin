@@ -2,38 +2,36 @@
   <el-aside width="200px">
     <el-menu
       default-active="2"
-      class="el-menu-vertical-demo">
-      <el-menu-item index="1">
-        <i class="el-icon-menu"></i>
-        <span slot="title">首页</span>
-      </el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">
-          <i class="el-icon-s-custom"></i>
-          <span>导航2</span>
-        </template>
-        <el-submenu index="2-2">
-          <template slot="title">
-            <i class="el-icon-place"></i>
-            <span>导航2-2</span>
-          </template>
-          <el-menu-item index="2-4-1">导航2-4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="3">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
+      class="el-menu-vertical-demo"
+      :router="true">
+      <template v-for="(item, index) in menu">
+        <sub-menu v-if="item.children"
+          :key="index" 
+          :sunMenu="item" />
+        <menu-item v-else
+          :key="index" 
+          :menuItem="item" />
+      </template>
     </el-menu>
   </el-aside>
 </template>
 
 <script>
+import routerConfig from '@router/serviceRoutes'
+import MenuItem from './MenuItem.vue'
+import SubMenu from './SubMenu.vue'
 export default {
-  data() {
+  components: { 
+    MenuItem,
+    SubMenu
+  },
+  data () {
     return {
-
+      menu: []
     }
+  },
+  created () {
+    this.menu = routerConfig
   }
 }
 </script>

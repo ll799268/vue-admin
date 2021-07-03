@@ -1,6 +1,8 @@
 <template>
   <el-main>
-    <router-view />
+    <transition>
+      <router-view />
+    </transition>
   </el-main>
 </template>
 
