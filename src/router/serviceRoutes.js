@@ -11,7 +11,10 @@ const routerConfig = [
     path: '',
     component: Home,
     title: '首页',
-    icon: 'el-icon-menu'
+    icon: 'el-icon-menu',
+    meta: {
+      docTitle: '首页'
+    }
   },
   {
     id: '2',
@@ -22,14 +25,20 @@ const routerConfig = [
       name: 'membersList',
       path: 'membersList',
       component: MembersList,
-      title: '会员列表'
+      title: '会员列表',
+      meta: {
+        docTitle: '会员列表'
+      }
     },
     {
       id: '2-2',
       name: 'membersStatistics',
       path: 'membersStatistics',
       component: MembersStatistics,
-      title: '会员统计'
+      title: '会员统计',
+      meta: {
+        docTitle: '会员统计'
+      }
     }]
   },
   {
@@ -41,14 +50,20 @@ const routerConfig = [
       name: 'userList',
       path: 'userList',
       component: UserList,
-      title: '用户列表'
+      title: '用户列表',
+      meta: {
+        docTitle: '用户列表'
+      }
     },
     {
       id: '3-2',
       name: 'userStatistics',
       path: 'userStatistics',
       component: UserStatistics,
-      title: '用户统计'
+      title: '用户统计',
+      meta: {
+        docTitle: '用户统计'
+      }
     }]
   }
 ]

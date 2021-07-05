@@ -7,7 +7,10 @@ const routes = [{
   name: 'login',
   path: '/login',
   component: Login,
-  title: '登录'
+  title: '登录',
+  meta: {
+    docTitle: '登录'
+  }
 },
 {
   path: '/layout',
@@ -18,7 +21,10 @@ const routes = [{
   name: '404',
   path: '*',
   redirect: '/layout',
-  title: '首页'
+  title: '首页',
+  meta: {
+    docTitle: '首页'
+  }
 }]
 
 export default routes
