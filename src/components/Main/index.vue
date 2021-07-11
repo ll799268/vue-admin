@@ -1,8 +1,8 @@
 <template>
   <el-main>
-    <transition>
+    <keep-alive>
       <router-view />
-    </transition>
+    </keep-alive>
   </el-main>
 </template>
 
