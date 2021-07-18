@@ -5,8 +5,9 @@ function resolve(dir) {
 }
 
 module.exports = {
-  lintOnSave: false,
-  publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
+  devServer: {
+    open: true
+  },
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
