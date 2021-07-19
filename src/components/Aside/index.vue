@@ -3,7 +3,8 @@
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
-      :router="true">
+      :router="true"
+      @select="selectCallback">
       <template v-for="(item, index) in menu">
         <sub-menu v-if="item.children"
           :key="index" 
@@ -27,11 +28,13 @@ export default {
   },
   data () {
     return {
-      menu: []
+      menu: routerConfig
     }
   },
-  created () {
-    this.menu = routerConfig
+  methods: {
+    selectCallback(index, indexPath) {
+      this.$store.commit('CALC_BREADCRUMB_LIST', indexPath)
+    }
   }
 }
 </script>
