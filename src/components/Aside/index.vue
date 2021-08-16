@@ -4,7 +4,10 @@
       default-active="2"
       class="el-menu-vertical-demo"
       :router="true"
-      @select="selectCallback">
+      @select="selectCallback"
+      background-color="#344054"
+      active-text-color="#409fff"
+      text-color="#fff">
       <template v-for="(item, index) in menu">
         <sub-menu v-if="item.children"
           :key="index" 
